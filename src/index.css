@@ -13,3 +13,7 @@
   .default {
     @apply tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#ED2A00] font-Montserrat text-base;
   }
+
+  .my-container {
+    @apply px-4 overflow-hidden mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 md:pt-9;
+  }
