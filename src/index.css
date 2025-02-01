@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.font-Montserrat {
+    font-family: "Montserrat";
+  }
+  .active {
+    @apply tracking-wide text-[#ED2A00] transition-colors duration-200 font-Montserrat text-base;
+  }
+  
+  .default {
+    @apply tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#ED2A00] font-Montserrat text-base;
+  }

@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.webp";
 import {
   PaperAirplaneIcon,
   Bars3Icon,
@@ -9,7 +10,7 @@ import { AiOutlineDown } from "react-icons/ai";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [profileOpen, setProfileOpen] = useState(false);
+  // const [profileOpen, setProfileOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef(null);
 
@@ -25,40 +26,12 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full bg-black bg-opacity-30 backdrop-blur-lg text-white shadow-md z-50 px-6 py-[25px] ">
       <div className="max-w-1320 mx-auto flex justify-between items-center">
-        <a href="/" className="flex gap-2 items-center">
-          <img src="/galaxy-spark-icon.png" alt="Logo" className="w-12 h-5 " />
-          <span className="font-syne text-1xl">GalaxySpark</span>
+        <a href="/" className="flex items-center">
+          <img src={logo} alt="Logo" className="w-[170px] h-auto" />
         </a>
 
         {/* Desktop Menu (Centered Links) */}
-        <div className="hidden lg:flex items-center gap-8 text-white font-semibold">
-          <NavLink
-            to="/"
-            aria-label="Home"
-            title="Home"
-            className={({ isActive }) => (isActive ? "active" : "default")}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/benefits"
-            aria-label="Benefits"
-            title="Benefits"
-            className={({ isActive }) => (isActive ? "active" : "default")}
-          >
-            Benefits
-          </NavLink>
-          <NavLink
-            to="/classes"
-            aria-label="Our Classes"
-            title="Our Classes"
-            className={({ isActive }) => (isActive ? "active" : "default")}
-          >
-            Our Classes
-          </NavLink>
-
-
-
+        <div className="hidden lg:flex items-center  text-white font-normal">
           {/* Dropdown Menu */}
           <div
             className="relative"
@@ -66,7 +39,7 @@ const Navbar = () => {
             onMouseLeave={handleMouseLeave}
           >
             <button
-              className={`flex items-center gap-1 text-base transition-all duration-200 ${
+              className={`relative flex items-center gap-1 text-base transition-all py-2 duration-200 ${
                 isOpen ? "text-[#ED2A00]" : "text-white hover:text-[#ED2A00]"
               } font-syne`}
             >
@@ -74,6 +47,12 @@ const Navbar = () => {
               <AiOutlineDown
                 className={`transition-transform duration-300 ${
                   isOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+              {/* Animated Underline */}
+              <span
+                className={`absolute bottom-0 left-0 right-0 w-0 h-[2px] bg-black transition-all duration-300 ${
+                  isOpen ? "w-full" : "w-0"
                 }`}
               />
             </button>
@@ -113,55 +92,25 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-        </div>
 
+          <NavLink
+            to="/"
+            aria-label="Home"
+            title="Home"
+            className="relative inline-flex items-center px-4 py-2 text-base transition-all duration-300 font-syne group"
+          >
+            Home
+            {/* Animated Underline */}
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-[80%] group-hover:left-1/10 transform -translate-x-1/2" />
+          </NavLink>
+        </div>
 
         {/* Right Section (User Profile Dropdown) */}
         <div className="hidden lg:flex items-center gap-6">
-          <div className="relative">
-            <button onClick={() => setProfileOpen(!profileOpen)}>
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt="User Profile"
-                className="size-8 rounded-full border border-gray-500"
-              />
-            </button>
-
-            {/* Profile Dropdown */}
-            {profileOpen && (
-              <div
-                className="absolute right-0 mt-3 w-48 bg-white text-black shadow-lg rounded-md"
-                onMouseLeave={() => setProfileOpen(false)}
-              >
-                <ul className="py-2">
-                  <li>
-                    <Link
-                      to="/dashboard"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      Dashboard
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/settings"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      Settings
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/logout"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      Logout
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
+          <button className="bg-transparent border border-white text-white font-semibold py-2 px-6 rounded-md hover:bg-white hover:text-blue-700 transition-all">
+            Contact Us{" "}
+            <AiOutlineDown className="inline-block ml-2 -rotate-90" />
+          </button>
         </div>
 
         {/* Mobile Menu Toggle */}
