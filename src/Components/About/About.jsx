@@ -8,7 +8,7 @@ import Background from "../../assets/content-image-1.png";
 import { motion } from "framer-motion";
 const About = () => {
   return (
-    <section className="overflow-hidden min-h-screen mx-auto  flex items-center justify-center">
+    <section className="overflow-hidden mt-24 mx-auto  flex items-center justify-center">
       <div className="container mx-auto max-w-[1320px] flex flex-col lg:flex-row items-center gap-10 md:gap-32 px-6 lg:px-12">
         {/* Text Section */}
         <div className="flex-1 text-left z-10">

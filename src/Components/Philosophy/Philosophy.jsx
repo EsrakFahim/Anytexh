@@ -26,7 +26,7 @@ const Philosophy = () => {
   ];
 
   return (
-    <section className="overflow-hidden px-10 min-h-screen mx-auto flex items-center justify-center">
+    <section className="overflow-hidden mt-24 px-10 min-h-screen mx-auto flex items-center justify-center">
       <div className="container mx-auto max-w-[1320px]">
         {/* Text Section */}
         <div className="mx-auto py-5 text-center z-10">

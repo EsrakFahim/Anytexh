@@ -50,56 +50,66 @@ const TechnologyTab = () => {
   };
 
   return (
-    <div className="w-full py-12">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Tabs Section */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-8">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2 md:px-6 md:py-3 rounded-full text-base md:text-lg transition ${
-                activeTab === tab
-                  ? "bg-blue-200 text-blue-600 font-bold"
-                  : "text-blue-600 hover:bg-blue-100"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        {/* Content Section */}
-        <div className="bg-white shadow-lg rounded-xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10 border border-gray-200 min-h-[400px]">
-          {/* Text Content */}
-          <div className="md:w-1/2 w-full">
-            <h4 className="text-sm md:text-base font-bold text-blue-500 uppercase tracking-wide">
-              {activeTab}
-            </h4>
-            <h2 className="text-2xl md:text-4xl font-semibold text-[#0b305b] mt-2">
-              {tabContent[activeTab].title}
-            </h2>
-            {tabContent[activeTab].description.map((text, index) => (
-              <p
-                key={index}
-                className="mt-4 text-sm md:text-base text-[#486c94] leading-relaxed"
+    <>
+      <div className="mx-auto mt-24 text-center z-10">
+        <span className="text-base uppercase font-bold text-[#2885f1]">
+          TECHNOLOGY BUILT FOR YOU
+        </span>
+        <h2 className="text-[32px] lg:text-[56px] leading-[40px] lg:leading-[64px] font-semibold text-[#0b305b] mt-4">
+          The future of finance
+        </h2>
+      </div>
+      <div className="w-full py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Tabs Section */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-8">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-5 py-2 md:px-6 md:py-3 rounded-full text-base md:text-lg transition ${
+                  activeTab === tab
+                    ? "bg-blue-200 text-blue-600 font-bold"
+                    : "text-blue-600 hover:bg-blue-100"
+                }`}
               >
-                {text}
-              </p>
+                {tab}
+              </button>
             ))}
           </div>
 
-          {/* Image Section */}
-          <div className="md:w-1/2 w-full flex justify-center">
-            <img
-              src={tabContent[activeTab].image}
-              alt={activeTab}
-              className="rounded-lg shadow-md w-full max-h-[400px] object-cover"
-            />
+          {/* Content Section */}
+          <div className="bg-white shadow-lg rounded-xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10 border border-gray-200 min-h-[400px]">
+            {/* Text Content */}
+            <div className="md:w-1/2 w-full">
+              <h4 className="text-sm md:text-base font-bold text-blue-500 uppercase tracking-wide">
+                {activeTab}
+              </h4>
+              <h2 className="text-2xl md:text-4xl font-semibold text-[#0b305b] mt-2">
+                {tabContent[activeTab].title}
+              </h2>
+              {tabContent[activeTab].description.map((text, index) => (
+                <p
+                  key={index}
+                  className="mt-4 text-sm md:text-base text-[#486c94] leading-relaxed"
+                >
+                  {text}
+                </p>
+              ))}
+            </div>
+
+            {/* Image Section */}
+            <div className="md:w-1/2 w-full flex justify-center">
+              <img
+                src={tabContent[activeTab].image}
+                alt={activeTab}
+                className="rounded-lg shadow-md w-full max-h-[400px] object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
