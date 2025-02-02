@@ -1,5 +1,6 @@
 import About from "../Components/About/About";
 import Philosophy from "../Components/Philosophy/Philosophy";
+import TechnologyTab from "../Components/TechnologyTab/TechnologyTab";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       </h1>
       <About />
       <Philosophy />
+      <TechnologyTab />
     </div>
   );
 };
