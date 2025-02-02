@@ -8,8 +8,8 @@ import Background from "../../assets/content-image-1.png";
 import { motion } from "framer-motion";
 const About = () => {
   return (
-    <section className="overflow-hidden min-h-screen mx-auto mt-2 flex items-center justify-center">
-      <div className="container mx-auto max-w-[1320px] flex flex-col lg:flex-row items-center gap-6 px-6 lg:px-12">
+    <section className="overflow-hidden min-h-screen mx-auto  flex items-center justify-center">
+      <div className="container mx-auto max-w-[1320px] flex flex-col lg:flex-row items-center gap-10 md:gap-32 px-6 lg:px-12">
         {/* Text Section */}
         <div className="flex-1 text-left z-10">
           <span className="text-base uppercase font-bold text-[#2885f1]">
@@ -35,7 +35,7 @@ const About = () => {
           {/* SVG Background */}
 
           <motion.div
-            className="absolute w-[550px] h-[650px] -z-10"
+            className="absolute hidden md:block w-[550px] h-[650px] -z-10"
             style={{
               backgroundImage: `url(${Background})`,
               backgroundSize: "cover",
