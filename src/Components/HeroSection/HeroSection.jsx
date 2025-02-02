@@ -1,10 +1,10 @@
-import{ useState } from 'react';
+import { useState } from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import bgImage from '../../assets/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg';
 import svg1 from '../../assets/backgrounds/WaveLinesDesktop1.svg';
 import svg2 from '../../assets/backgrounds/WaveLinesDesktop2.svg';
 import svg3 from '../../assets/backgrounds/WaveLinesDesktop3.svg';
-import svg4 from '../../assets/backgrounds/WaveLinesDesktop4.svg';
+// import svg4 from '../../assets/backgrounds/WaveLinesDesktop4.svg';
 
 const HeroSection = () => {
       // Parallax effect on the background image (Y-axis)
@@ -20,15 +20,12 @@ const HeroSection = () => {
       };
 
       // Calculate offset relative to the center of the screen.
-      // When the mouse is to the right of center, offset is positive;
-      // When left, offset is negative.
       const centerX = window.innerWidth / 2;
       const offset = mouseX - centerX;
 
-      // Define two different multipliers for different sensitivity.
-      // The negative sign makes the SVG move opposite to the mouse movement.
-      const groupOneOffset = -offset * 0.05; // for 1st and 3rd SVG images
-      const groupTwoOffset = -offset * 0.1;  // for 2nd and 4th SVG images
+      // Reduced multipliers for smaller movement.
+      const groupOneOffset = -offset * 0.02; // for 1st and 3rd SVG images
+      const groupTwoOffset = -offset * 0.04; // for 2nd and 4th SVG images
 
       return (
             <div
@@ -75,28 +72,28 @@ const HeroSection = () => {
                         <motion.img
                               src={svg1}
                               alt="Wave 1"
-                              className='absolute top-0 left-0'
+                              className='absolute top-0 left-0 min-w-[150%] object-cover'
                               animate={{ x: groupOneOffset }}
                               transition={{ type: "spring", stiffness: 100, damping: 20 }}
                         />
                         <motion.img
                               src={svg2}
                               alt="Wave 2"
-                              className='absolute top-0 left-0'
+                              className='absolute top-0 left-0 min-w-[150%] object-cover'
                               animate={{ x: groupTwoOffset }}
                               transition={{ type: "spring", stiffness: 100, damping: 20 }}
                         />
                         <motion.img
                               src={svg3}
                               alt="Wave 3"
-                              className='absolute top-0 left-0'
+                              className='absolute top-0 right-0 min-w-[120%] object-cover'
                               animate={{ x: groupOneOffset }}
                               transition={{ type: "spring", stiffness: 100, damping: 20 }}
                         />
                         <motion.img
-                              src={svg4}
+                              src={svg2}
                               alt="Wave 4"
-                              className='absolute bottom-0 left-0'
+                              className='absolute bottom-0 right-0 min-w-[110%] object-cover'
                               animate={{ x: groupTwoOffset }}
                               transition={{ type: "spring", stiffness: 100, damping: 20 }}
                         />
