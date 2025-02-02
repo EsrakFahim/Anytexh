@@ -43,7 +43,7 @@ const HeroSection = () => {
           <br />
           banking solution that powers transformation.
         </p>
-        <button className="bg-[#fe8b53] text-white text-[18px] font-semibold leading-[23px] font-Montserrat px-6 py-3 rounded-lg flex items-center gap-2">
+        <button className="bg-[#fe8b53] text-white text-[18px] font-semibold leading-[23px] font-Montserrat px-6 py-3 rounded-lg flex items-center gap-2 transition-all duration-300 hover:bg-white hover:text-[#fe8b53]">
           Reach Out to Us <span>›</span>
         </button>
       </div>
