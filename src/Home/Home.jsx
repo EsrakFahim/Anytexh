@@ -1,13 +1,12 @@
 import About from "../Components/About/About";
+import HeroSection from "../Components/HeroSection/HeroSection";
 import Philosophy from "../Components/Philosophy/Philosophy";
 
 
 const Home = () => {
   return (
     <div>
-      <h1 className="text-3xl text-red-600 font-bold underline">
-        Hello world!f
-      </h1>
+      <HeroSection />
       <About />
       <Philosophy />
     </div>
