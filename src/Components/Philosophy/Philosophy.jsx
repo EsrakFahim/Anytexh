@@ -44,7 +44,7 @@ const Philosophy = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-[#f8fcff] shadow-xl rounded-[20px] p-10"
+              className="bg-[#f8fcff] shadow-lg rounded-[20px] p-10"
             >
               <div className="rounded-full flex items-center  flex-shrink-0">
                 <img
